@@ -1,0 +1,9 @@
+Please select a `.csv`/`.xlsx`/`.sav` (SPSS)/`.dta` (Stata) or `.rds` ( R ) file. Currently, all texts must be part of _one_ spreadsheet. If you have the texts in separate files, you can use [this R script](https://github.com/stefan-mueller/texts-to-corpus) to transform the data to a format that is supported by TADA. [Here](https://github.com/stefan-mueller/texts-to-corpus/sample-data) you can download sample `csv` and `xlsx` files that have the structure required for TADA.
+
+The file must contain at least one variable which contains text. TADA will automatically select a variable from your data which contains text. You can change this variable by providing the variable name of the text variable using the **Name of Text Variable**-box on the right.
+
+It is often helpful to specify a **Document ID Variable** which contais a label for each document in the corpus. When you do not specify this ID then default names will be used ('text1', 'text2', ...). The corpus may also contain additional **Document-level variables** associated with each document. The **Variable Overview** box shows you how each document-level variable is coded (either character, numeric or integer). Before you proceed, make sure that the variables are coded as intended.
+
+If you only want to learn how TADA works, you can use a predefined data set of Irish Party Manifestos 1990-2011. Simply select the option **Use sample corpus**.
+
+Note that you will need to **Create a dfm** from your text corpus to use the **Text Scaling** and **Topic Model** functions.

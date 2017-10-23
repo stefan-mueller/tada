@@ -1,0 +1,11 @@
+The **Document-feature Matrix (dfm)** - sometimes called document-term matrix - is the "workhorse" for most analyses of textual data. A dfm is a matrix of word counts with one row for each document and a separete column with a count of each term. With  **Select language** you can determine the language of the text. This is required if we would like to remove stopwords (see below). 
+
+You can remove certain parts from the corpus by customising the **Text conversion** options. In particular, you can decide whether to **convert text to lowercase**, **stem words**, **remove punctuation**, **symbols**, **number**, **separators**, **hypothens**, **URLs** or **Twitter symbols**.
+
+Many words occur very frequently across all texts and might not add much value to the analysis. We call these features **Stop words**. TADA uses the custom stopwords lists from the [quanteda](http://quanteda.io) R package. The words are displayed in the bottom-right corner of the site. You can add or remove custom words.
+
+Note that the choice of text preprocessing might have a large impact on the results (see extensively [Denny and Spriling 2017](http://www.nyu.edu/projects/spirling/documents/preprocessing.pdf))!
+
+Once you have decided which features to keep, click **Create dfm** to transform the corpus to a document-feature matrix. The fields below show you the number of documents, features and the sparsity of the dfm (the proportion of cells that have zero counts). You can reduce the sparsity by removing terms based on the **Minimum** or **Maximum word count** within and across documents or based on total word counts.
+
+After the conversion, you can create and download **Summary plots** of the dfm. The **Dotplot** shows the most frequent words across the texts. You can plot the **Frequencies by Group** when you entere a grouping document-level variable. The **Wordcloud** displays the topfeatures proportional to their occurrences in the dfm. You can select how **Number of words to be displayed**, the **Minimum word frequency**, and (for wordclouds) what percentage of words should be **rotated**. The plots can be downloaded as a `pdf` or `png` file. Make sure to adjust **Width** and **Height** according to your needs.

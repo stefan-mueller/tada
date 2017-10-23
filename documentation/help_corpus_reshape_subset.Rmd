@@ -1,0 +1,6 @@
+Having loaded your text data into a corpus, you can select only certain parts of the corpus or reshape your corpus to a different level. We recommend not to change the raw corpus manually, but adjust the settting via the following functions.
+
+You can **Subset** the corpus by entering conditions based on document level variables. **Reshape Corpus** lets you change the units of the corpus from documents to paragraphs or sentences. You dan also download the **Reshaped Data** as a `csv` file, for example if you want to use the corpus on the sentence- or paragraph-level for crowd-coding taks [(Benoit et al. 2016)](http://kenbenoit.net/pdfs/Crowd_sourced_data_coding_APSR.pdf).
+
+Make sure to **Inspect** the Corpus after making the changes. With the **Show text** button you can check whether the text encoding worked correctly.
+

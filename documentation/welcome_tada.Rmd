@@ -1,0 +1,11 @@
+Welcome to TADA!
+
+TADA allows you to apply methods for quantitative text analysis without any knowledge of a statistical programming language. While there has been a rapid progress in the development of new methods for quantitative text analysis [(Grimmer and Stewart 2013)](https://www.cambridge.org/core/journals/political-analysis), these tools are usually only avaiable for people who are at least a bit familiar with R or Python.
+
+There are almost no packages for quantitative text analysis for Stata or SPSS. While we enjoy working with R, we understand that not every scholar has the time to learn R just for applying one specific method. Therefore, the goal of TADA is to provide an easy-to-use graphical user interface for all those scholars who are interested in quantiative text analysis.
+
+TADA is work in progress and its functionality will be constantly extended. Currently, the app allows you to upload your textual data with document-level variables, get descriptive statistics of your text and to analyze the corpus using various text scaling techniques or topic models. All results from this app can be downloaded and stored on your computer. The app also allows you to visualize most of your models and produces publication ready graphics.
+
+Most of the functions of this app are based on the [quanteda](https://quanteda.io) R package, which we strongly recommend if you want to learn more about quantiative text analysis using R. LDA is implemented with the [topicmodels](https://cran.r-project.org/web/packages/topicmodels/index.html) R package. Plots are based on [ggplot2](http://ggplot2.tidyverse.org).
+
+We hope you enjoy using this app. We are grateful for feedback and bug reports at [info@tada-gui.com](mailto:info@tada-gui.com).

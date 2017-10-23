@@ -1,0 +1,10 @@
+name: quanteda_gui
+title:
+username:
+account: michael-jankowski
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 221218
+bundleId: 1027452
+url: https://michael-jankowski.shinyapps.io/quanteda_gui/
+when: 1508069943.4998

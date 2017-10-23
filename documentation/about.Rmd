@@ -1,0 +1,50 @@
+## About TADA
+
+The Text as Data App (TADA) is a project of [Michael Jankowski](http://michael-jankowski.de) (University of Oldenburg) and [Stefan Müller](http://muellerstefan.net) (Trinity College Dublin). 
+
+The App is written in [R Shiny](https://shiny.rstudio.com) and can be used online via www.tada-gui.com or (soon) as an R Package ('TADA'). Almost all of the text analysis functions avaialble in TADA are based on the excellent [quanteda](http://quanteda.io) R package, maintained by [Kenneth Benoit](http://kenbenoit.net). The implementation of LDA is based on the [topicmodels](https://cran.r-project.org/web/packages/topicmodels/index.html) package for R. All plots are based on the [ggplot2](http://ggplot2.tidyverse.org) package.
+
+Scholars with little experience of quantitative text analysis face two potential obstacles. First, these methods rest on certain assumptions and one has to beware of the potentials and pitfalls of quantitative text analysis [(Grimmer and Stewart 2013)](https://www.cambridge.org/core/journals/political-analysis). This means that scholars require a profound understanding of the underlying assumptions when a certain text analytic method is appropriate. Second, these methods are so far always only implemented in R or Python which requires advanced knowledge of statistical programming language. It is quite difficult to learn the computational basics of text analysis, particular for scholars who have little experience in with statistical software. While the first problem can only be solved by studying the assumptions of these approaches in detail, the Text as Data App (TADA) serves as a solution for the second obstacle. It provides an easy-to-use graphical user interface for all those scholars who are interested in quantitative text analysis. No additional software is required and all results from can be downloaded easily. Moreover, the app also produces publication ready plots of text frequencies and scaling models.
+
+TADA can also be used for teaching purposes in courses on quantitative resesarch methods. While text analysis approaches usually required considerable knowledge of a programming language, with TADA instructors can give a comprehsible - and comprehensive - introduction to text analysis. Moreover, students might use this app to conduct sophisticated text analytic methods for their coursework, seminar papers, or undergraduate and graduate dissertations. This app, however, cannot cover the full functionality provided in the above mentioned R packages. While we are convinced that our app includes many of the most frequently used functions for text analysis, you will have to work with R or Python if you want to go into the details of quantitative text analysis.
+
+Finally, please notice that this app is work in progress and errors cannot be ruled out. Please report any bugs or feedback or your experience how you used TADA in your research by sending an email to: info@tada-gui.com. We look forward to hearing from you.
+
+## References
+
+### Packages
+
+Benoit, K. et. al. (2017). "quanteda: Quantitative Analysis of Textual Data." R package version: 0.99.7. http://quanteda.io.
+  
+Grün B, and K. Hornik (2011). "topicmodels: An R Package for Fitting Topic Models." _Journal of Statistical Software_ 40(13): 1-30. http://doi.org10.18637/jss.v040.i13.
+
+Wickham, H. (2017). "tidyverse: Easily Install and Load 'Tidyverse' Packages." R package version 1.1.1. https://CRAN.R-project.org/package=tidyverse
+
+### Methods
+
+#### Wordscores
+
+Laver, M., K. R. Benoit, and J. Garry. 2003. "[Extracting Policy Positions From Political Texts Using Words as Data](http://faculty.washington.edu/jwilker/tft/Laver.pdf)." _American Political Science Review_ 97(2): 311-331.
+
+Lowe, W. 2008. "[Understanding Wordscores](http://faculty.washington.edu/jwilker/559/Lowe.pdf)." _Political Analyis_ 16(4): 356-371.
+
+Martin, L. W., and G. Vanberg. 2007. "[A Robust Transformation Procedure for Interpreting Political Text](http://people.duke.edu/~gsv5/PA2008.pdf)." _Political Analysis_ 16(1): 93-100.
+
+#### Wordfish
+
+Slapin, J., and S.O. Proksch. 2008. "[A Scaling Model for Estimating Time-Series Party Positions from Texts](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.420.1849&rep=rep1&type=pdf)." _American Journal of Political Science_ 52(3):705-772.
+
+Lowe, W., and K. Benoit. 2013. "[Validating Estimates of Latent Traits from Textual Data Using Human Judgment as a Benchmark](
+https://doi.org/10.1093/pan/mpt002)." _Political Analysis_ 21(3): 298-313.
+
+#### Correspondence Analysis
+
+Lowe, W. 2016. "[Scaling Things We Can Count](http://dl.conjugateprior.org/preprints/scaling-things-we-can-count.pdf)". _Working Paper_. 
+
+Nenadic, O., and M. Greenacre. 2007. "[Correspondence analysis in R, with two- and three-dimensional graphics: The ca package](https://www.jstatsoft.org/article/view/v020i03)." _Journal of Statistical Software_ 20 (3): 1-13.
+
+#### Topic Models
+
+Blei, D.M., A.Y. Ng, and M.I. Jordan. 2003. "[Latent Dirichlet Allocation](https://endymecy.gitbooks.io/spark-ml-source-analysis/content/聚类/LDA/docs/Latent%20Dirichlet%20Allocation.pdf)." _The Journal of Machine Learning Research_ 3(1): 993-1022.
+
+Blei, D.M. 2012. "[Probabilistic Topic Models](www.cs.columbia.edu/~blei/papers/Blei2012.pdf)." _Communications of the ACM_ 55(4): 77-84.

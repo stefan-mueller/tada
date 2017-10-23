@@ -1,0 +1,3 @@
+With **Keywords in Context (KWIC)** you can inspect the return one or more keywords and the terms in their immediate context. KWIC can be very useful to assess qualitatively the environments in which certain terms are used in the corpus. Note that you can determine whether the KWIC search should be **Case insentivive** or **Case sensitive**. After entering the keyword(s), press **Start KWIC Analysis**.
+
+You can **Download** the KWIC Data as a `csv` file if you want to save all occurences of a term.

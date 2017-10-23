@@ -1,0 +1,60 @@
+---
+title: "Documentation TADA-gui"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Purpose
+
+_This file is supposed as a collection of texts for boxes and help pages for the TADA GUI. I use RMarkdwon to make it straighforward to copy text and formatting into the app._
+
+
+## START PAGE 
+
+I'd say we have some sort of a start page that explains the function of each menu briefly?
+
+
+
+## DATA UPLOAD
+
+**Upload Data**
+
+Please select a `.csv`/`.xlsx`/`.sav` (SPSS)/`.dta` (Stata) or `.rds` (R) file. Currently, all texts must be part of one spreadsheet. If you have the texts in separate files, you can use [this R script](https://github.com/stefan-mueller/texts-to-corpus) to transform the data to a format that is supported by TADA. The file must contains the following fields. You can specify the names of these columns in the right part of this box. In the box **Text variable** you specify the column that contains the texts. Usually each document of the text corpus is a single column in the dataset. You can reshape the corpus to a different level (e.g. sentences, paragraphs) afterwards. The field **Document ID Variable** contais the name of the ID variable for each document in the corpus. Your corpus may also contain additional **Document-level variables** associated with each document. You can **Subset** the corpus by entering conditions based on document level variables. 
+
+## EXPLORE CORPUS
+
+Once you have uploaded the data successfully, **TADA** automatically transforms the data to a text corpus. To check whether the corpus was loaded correctly, the left-hand panel shows a summary of the corpus 
+
+The key-word-in-context (KWIC) function allows you to return all occurences of a word or regular expression and the immediate context. This can be very useful to understand how often and when a word is used. Just type the word in the **Enter keyword** field. You can specify whether the search is **case insensitive** and how many terms should be displayed around the keyword. Select **Start KWIC Analysis** to retrieve the results.
+
+## CREATE DFM
+
+The document-feature matrix (sometimes called document-term matrix) is the "workhorse" for most analyses of textual data. A dfm is a matrix of counts with one row for each document and a separet column with a count of each term. With  **Select language** you can determine the language of the text. This is required if we would like to remove stopwords (see below). 
+
+You can remove certain parts from the corpus by customising the **Text conversion** options. In particular, you can decide whether to **convert text to lowercase**, **stem words**, **remove punctuation**, **symbols**, **number**, **separators**, **hypothens**, **URLs** or **Twitter symbols**. 
+
+Many words occur very frequently across all texts and might not add much value to the analysis. We call these features **Stop words**. TADA uses the custom stopwords lists from the quanteda package. The words are displayed in the bottom-right corner of the site. You can add or remove custom words.
+
+Note that the choice of text preprocessing might have an impact on the results. (see extensively [Denny and Spriling 2017](http://www.nyu.edu/projects/spirling/documents/preprocessing.pdf)). Once you have decided which features to keep, click **Create dfm** to transform the corpus to a document-feature matrix. 
+
+After the conversion, you can create and download **Summary plots** of the dfm. The **Dotplot** shows the most frequent words across the texts, the **Wordcloud** displays the topfeatures proportional to their occurrences in the dfm. You can select how **Number of words to be displayed**, the **Minimum word frequency**, and (for wordclouds) what percentage of words should be **rotated**. 
+
+## WORDSCORES
+
+The **Wordscores** option implements the wordscores scaling model developed by [Laver, Benoit and Garry (2003)](http://faculty.washington.edu/jwilker/tft/Laver.pdf). Wordscores are a scaling method for estimating the positions (mostly of political actors) for dimensions that are specified a priori. Wordscores is widely used among political scientists. For problems and shortcomings of the approach see [Lowe (2008)](http://faculty.washington.edu/jwilker/559/Lowe.pdf).
+
+To score the documents, you need to specify so called reference texts in your text corpus. These texts require reference scores that are stored in a **Scoring Variable**. You need to specify the name of the scoring variable.  Afterwards, Wordscores estimates the positions for the remaining **virgin texts**. Moreover, there are three scaling options for the Wordscores estimates: raw, [LBG (Laver, Benoit and Garry)](http://faculty.washington.edu/jwilker/tft/Laver.pdf) and the [MV (Martin and Vanberg)](http://people.duke.edu/~gsv5/PA2008.pdf) transformation.
+
+
+## WORDFISH
+
+An alternative to the Wordscores method is the **Wordfish** Poisson scaling model of one-dimensional document positions ([Slapin and Proksch 2008](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.420.1849&rep=rep1&type=pdf)). Wordfish also allows for scaling documents, but compared to **Wordscores** reference scores/texts are not required. Wordfish is an unsupervised text scaling method, meaning that it estimates the positions of documents solely based on the observed word frequencies. Texts are positioned on a single dimension based on these word frequencies. Documents with similar word frequencies are placed on similar positions while documents with large differences in word usage are placed on very distant positions on the dimension. To determine the "direction" of the documents, you can specify the texts that would correspond to the ends of the dimension using the **Left anchor** and **Right anchor** fields.
+
+You can retrieve the Wordfish estimates for the texts as a plot with **Point Estimates**, in a **Stacked** boxplot or density plot (you need to specify a grouping variable). Moroever, with the **Features** plot you can plot the scores of the features as a measure of relative frequency. You also have several options for customising the pot (**Labels**, **Title**, **Plotting theme**, and **Font size**).
+## TOPIC MODELS (LDA)
+
+Latent Dirichlet Allocation (LDA) assumes that each corpus consists of multiple Topics and that each Topic consists of multiple words. With topic models users can discover the main themes in a collection of documents (see extensively [Blei 2012](http://www.cs.columbia.edu/~blei/papers/Blei2012.pdf)). The user has to specify the number of Topics that should be identified in the text. The topics are assumed to be generated before the documents have been generated. The identified Topics can be interpreted based on the word which belong with the highest probability to the Topics.
+
