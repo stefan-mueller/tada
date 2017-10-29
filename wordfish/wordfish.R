@@ -10,7 +10,8 @@ fluidRow(
       numericInput("wf_dir1", "Left anchor", value = 1, width = "75%"),
       numericInput("wf_dir2", "Right anchor", value = 2, width = "75%"),
       sliderInput("wf_ci", "Confidence Intervals", min = 80, max = 99, step = 1, value = 95, width = "75%")),
-      actionButton("estimate_wf", h4(strong("Estimate Wordfish")), width = "100%")
+      actionButton("estimate_wf", h4(strong("Estimate Wordfish")), width = "100%",
+                   style="color: #fff; background-color: #2A3135; border-color: #B9C6CE")
   ),
   
   box(width = 4, title = "Download Results", collapsible = TRUE,

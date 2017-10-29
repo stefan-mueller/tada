@@ -12,7 +12,8 @@ fluidRow(
                   textInput("ws_scores", "Name of Scoring Variable", placeholder = "e.g., 'ref_scores'", width = "75%"),
                   radioButtons("ws_rescale", "Type of Rescaling", choices = list("Raw" = "none", "LBG" = "lbg", "MV" = "mv"), inline = TRUE),
                   sliderInput("ws_ci", "Confidence Intervals (%)", min = 80, max = 99, step = 1, value = 95, width = "75%")),
-      actionButton("estimate_ws", h4(strong("Estimate Wordscores")), width = "100%")
+      actionButton("estimate_ws", h4(strong("Estimate Wordscores")), width = "100%",
+                   style="color: #fff; background-color: #2A3135; border-color: #B9C6CE")
   ),
   
   box(width = 4, title = "Download Results", collapsible = TRUE,

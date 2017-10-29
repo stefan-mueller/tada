@@ -78,7 +78,8 @@ fluidRow(
 
   column(width = 12,
   hr(),
-  actionButton("create_dfm", h4(strong("Create dfm")), width = "100%")
+  actionButton("create_dfm", h4(strong("Create dfm")), width = "100%",
+               style="color: #fff; background-color: #2A3135; border-color: #B9C6CE")
   )),
   
   valueBoxOutput("n_docs", width = 4),

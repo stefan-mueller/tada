@@ -14,7 +14,8 @@ fluidRow(
                   numericInput("lda_burnin", "Number of burnin iterations", min = 1, value = 100, width = "75%"),
                   numericInput("lda_iter", "Number of iterations", min = 1, value = 100, width = "75%")
       ),
-      actionButton("estimate_lda", "Estimate LDA", width = "100%")
+      actionButton("estimate_lda", "Estimate LDA", width = "100%",
+                   style="color: #fff; background-color: #2A3135; border-color: #B9C6CE")
   ),
   
   #### SUMMARY

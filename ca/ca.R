@@ -6,7 +6,8 @@ fluidRow(
   
   box(width = 8, title = "CA Options", collapsible = TRUE,
       numericInput("ca_dim", "Number of Dimensions", value = NA, min = 2, width = "10%"),
-      actionButton("estimate_ca", h4(strong("Estimate CA")), width = "100%")
+      actionButton("estimate_ca", h4(strong("Estimate CA")), width = "100%",
+                   style="color: #fff; background-color: #2A3135; border-color: #B9C6CE")
   ),
   
   box(width = 4, title = "Download Results", collapsible = TRUE,

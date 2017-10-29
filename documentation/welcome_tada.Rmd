@@ -8,4 +8,9 @@ TADA is work in progress and its functionality will be constantly extended. Curr
 
 Most of the functions of this app are based on the [quanteda](https://quanteda.io) R package, which we strongly recommend if you want to learn more about quantiative text analysis using R. LDA is implemented with the [topicmodels](https://cran.r-project.org/web/packages/topicmodels/index.html) R package. Plots are based on [ggplot2](http://ggplot2.tidyverse.org).
 
-We hope you enjoy using this app. We are grateful for feedback and bug reports at [info@tada-gui.com](mailto:info@tada-gui.com).
+We hope you enjoy using this app. We are grateful for feedback and bug reports at [info@tada-gui.com](mailto:info@tada-gui.com). 
+
+Please cite the app if you use it for your own work: 
+
+Jankowski Michael, and Stefan Müller (2017). _TADA: The Text-as-Data-App. Version 0.1._ http://tada-gui.com.
+

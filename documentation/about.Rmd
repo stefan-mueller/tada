@@ -10,6 +10,20 @@ TADA can also be used for teaching purposes in courses on quantitative resesarch
 
 Finally, please notice that this app is work in progress and errors cannot be ruled out. Please report any bugs or feedback or your experience how you used TADA in your research by sending an email to: info@tada-gui.com. We look forward to hearing from you.
 
+How to cite TADA: 
+
+Jankowski Michael, and Stefan Müller (2017). _TADA: The Text-as-Data-App. Version 0.1._ http://tada-gui.com.
+
+A BibTeX entry for LaTeX users is:
+```
+@Manual{,
+	author = {Michael Jankowski and Stefan Müller},
+	title = {TADA: The Text as Data App},
+	note = {Version XXXX}, 
+	url = {http://tada-gui.com},
+}
+```
+
 ## References
 
 ### Packages
