@@ -1,7 +1,7 @@
-# Ueber die Seite laedt man die App!
+# Load the app here
 
 library(shinyjs)
-source("uix.R", local = TRUE)$value
-source("serverx.R", local = TRUE)$value
+source("ui_tada.R", local = TRUE)$value
+source("server_tada.R", local = TRUE)$value
 enableBookmarking("url")
 shinyApp(ui, server) # launch app
