@@ -12,5 +12,5 @@ We hope you enjoy using this app. We are grateful for feedback and bug reports a
 
 Please cite the app if you use it for your own work: 
 
-Jankowski Michael, and Stefan Müller (2017). _TADA: The Text-as-Data-App. Version 0.1._ http://tada-gui.com.
+Jankowski, Michael, and Stefan Müller (2017). _TADA: The Text-as-Data-App. Version 0.1._ http://tada-gui.com.
 

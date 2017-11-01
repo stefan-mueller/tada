@@ -12,7 +12,7 @@ Finally, please notice that this app is work in progress and errors cannot be ru
 
 How to cite TADA: 
 
-Jankowski Michael, and Stefan Müller (2017). _TADA: The Text-as-Data-App. Version 0.1._ http://tada-gui.com.
+Jankowski, Michael, and Stefan Müller (2017). _TADA: The Text-as-Data-App. Version 0.1._ http://tada-gui.com.
 
 A BibTeX entry for LaTeX users is:
 ```
