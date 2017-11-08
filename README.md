@@ -7,17 +7,17 @@ You can access the most recent stable version at: https://tada-gui.shinyapps.io/
 When you have [R](https://www.r-project.org) installed, you can open the app on your local machine.
 
 ```r
-# If shiny package is not installed
-if (!require("shiny")) {
-    install.packages("shiny")
+# install shiny package if it is not
+if (!"shiny" %in% installed.packages()) {
+  install.packages("shiny")
 }
 
+# load the shiny package
 library(shiny)
 
-# Easiest way is to use runGitHub
+# easiest way to load TADA is to use runGitHub
 runGitHub("tada", "stefan-mueller")
 ```
-
 
 How to cite TADA: 
 

@@ -1,15 +1,3 @@
-library(shiny)
-library(shinydashboard)
-library(quanteda)
-library(tidyverse)
-library(readxl)
-library(haven)
-library(stringr)
-library(topicmodels)
-library(data.table)
-library(ggridges)
-library(shinyjs)
-
 ui <- function(req){
   
               dashboardPage(skin = "black", title = "TADA - The Text as Data App", 
