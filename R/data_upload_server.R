@@ -131,7 +131,7 @@ observeEvent(input$upload_file, {
 observeEvent(input$use_default == TRUE | input$use_default == FALSE, { 
   
   if(input$use_default == TRUE){  
-    df_container$df <- as.data.frame(readRDS(file = "sample_data/manifestos_ireland.rds"))
+    df_container$df <- as.data.frame(readRDS(file = "data/manifestos_ireland.rds"))
     df_container$upload_check <- TRUE
     df_container$format_check <- TRUE
     df_container$text_var <- "text"

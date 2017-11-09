@@ -18,7 +18,7 @@ fluidRow(
         downloadButton("download_kwic_data", label = "Download KWIC Data (.csv)", width = "100%"),
         radioButtons("kwic_data_sep", "Delimiter for .csv data", choices = list(";" = ";", "," = ","), inline = TRUE)
         ),
-        actionButton("get_kwic", "Start KWIC Analysis", width = "100%",
+        actionButton("get_kwic", h4(strong("Start KWIC Analysis")), width = "100%",
                      style="color: #fff; background-color: #2A3135; border-color: #B9C6CE"),
         h4("KWIC Results"),
         dataTableOutput("kwic_table")

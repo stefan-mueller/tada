@@ -25,7 +25,7 @@ box(width = 12, title = "Select Data", collapsible = TRUE,
                   inline = TRUE),
     checkboxInput("use_default", HTML("Use sample corpus"), value = FALSE)
     ),
-    actionButton("upload_file", "Upload Data!", width = "100%",
+    actionButton("upload_file", h4(strong("Upload Data!")), width = "100%",
                  style="color: #fff; background-color: #2A3135; border-color: #B9C6CE")
     ), # end box
 

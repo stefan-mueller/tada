@@ -15,7 +15,7 @@ fluidRow(
       textInput("subset_condition", "Please enter a condition in the textfield below to subset your corpus", placeholder = "e.g. 'year > 1990 & gender == 1'"),
       h4("Subset by Document Text Length"),
       numericInput("subset_doc_length", "Minimum Number of Words per Document", min = 1, value = 1),
-      actionButton("subset_corpus", "Subset Corpus", width = "100%",
+      actionButton("subset_corpus", h4(strong("Subset Corpus")), width = "100%",
                    style="color: #fff; background-color: #2A3135; border-color: #B9C6CE")
       ),
   
@@ -33,7 +33,7 @@ fluidRow(
       radioButtons("reshape_corpus", "Reshape corpus", 
                    choices = list("Paragraphs" = "paragraphs", "Sentences" = "sentences"), 
                    inline = TRUE),
-      actionButton("reshape", "Reshape Corpus", width = "20%",
+      actionButton("reshape", h4(strong("Reshape Corpus")), width = "20%",
                    style="color: #fff; background-color: #2A3135; border-color: #B9C6CE"),
       h5(strong("Download reshaped data")),
       radioButtons("reshape_data_sep", "Delimiter for .csv data", choices = list(";" = ";", "," = ","), inline = TRUE),
