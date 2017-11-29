@@ -1,0 +1,3 @@
+With **Keyness** you can analyze which words occur in certain groups of text more frequently than in other groups. To determine these groups you have to provide a keyness variable that defines these groups. You then have to provide one level of this variable for which the word differences are estimated. After entering this information, press **Start Keyness Analysis**.
+
+Example: Consider a dataset with texts and information about the gender of the author (male or female; variable name = 'gender'). You want to analyze which words are systematically more frequently used by male authors compared to female authors. In this case the 'keyness-variable' is 'gender' and the 'keyness'-target is 'male'.

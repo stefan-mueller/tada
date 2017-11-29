@@ -3,7 +3,7 @@
 fluidRow(
   
   box(width = 12, title = "Help (press '+' to expand)", collapsible = TRUE, collapsed = TRUE,
-      includeMarkdown("documentation/help_kwic.Rmd")
+      includeMarkdown("documentation/help_keyness.Rmd")
   ),
   
   # KWIC
