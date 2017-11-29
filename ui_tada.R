@@ -14,6 +14,7 @@ ui <- function(req){
                         tabItem(tabName = "data_upload", source("ui/data_upload.R", local = TRUE)$value),
                         tabItem(tabName = "subset_reshape_corpus", source("ui/subset_reshape_corpus.R", local = TRUE)$value),
                         tabItem(tabName = "kwic", source("ui/kwic.R", local = TRUE)$value),
+                        tabItem(tabName = "keyness", source("ui/keyness.R", local = TRUE)$value),
                         tabItem(tabName = "create_dfm", source("ui/create_dfm.R", local = TRUE)$value),
                         tabItem(tabName = "wordscores", source("ui/wordscores.R", local = TRUE)$value),
                         tabItem(tabName = "wordfish", source("ui/wordfish.R", local = TRUE)$value),
