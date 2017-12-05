@@ -2,7 +2,8 @@ name: tada
 title:
 account: tada-gui
 server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
 appId: 225350
-bundleId: 1066009
+bundleId: 1116383
 url: https://tada-gui.shinyapps.io/tada/
-when: 1510193136.71127
+when: 1512475857.8246

@@ -1,7 +1,7 @@
 # Use packman package to check whether required packages are installed.
 # Install missing packages, and load all packages afterwards
 
-if (!require("pacman")) install.packages("pacman")
+#if (!require("pacman")) install.packages("pacman")
 
 pacman::p_load(shiny, 
                shinydashboard,
@@ -14,7 +14,8 @@ pacman::p_load(shiny,
                readxl,
                haven,
                topicmodels,
-               ggridges)
+               ggridges,
+               install = FALSE)
 
 source("ui_tada.R", local = TRUE)$value
 source("server_tada.R", local = TRUE)$value
