@@ -2,7 +2,6 @@
 
 This repository contains all files of the [**Shiny**](michael.jankowski@uni-oldenburg.de) application **TADA - The Text as Data App**. TADA is work in progress and its functionality will be constantly extended. Currently, the app allows you to upload textual data with document-level variables, get descriptive statistics of your text and to analyze the corpus using various text scaling techniques (Wordscores, Wordfish, Correspondence Analysis) or topic models. All results from this app can be downloaded easily. The app also allows you to visualize most of your models and produces publication ready graphics. Almost all of the text analysis functions avaialble in TADA are based on the [**quanteda**](https://github.com/kbenoit/quanteda) R package. The implementation of LDA is based on the [**topicmodels**](https://cran.r-project.org/web/packages/topicmodels/index.html) package. All plots are based on [**ggplot2**](http://ggplot2.tidyverse.org).
 
-
 You can access the most recent stable version at: https://tada-gui.shinyapps.io/tada/. 
 
 When you have [R](https://www.r-project.org) installed, you can open the app on your local machine.
@@ -20,7 +19,7 @@ library(shiny)
 runGitHub("tada", "stefan-mueller")
 ```
 
-How to cite TADA: 
+How to cite **TADA**: 
 
 Jankowski, Michael, and Stefan Müller (2017). _TADA: The Text-as-Data-App. Version 0.1._ https://github.com/stefan-mueller/tada.
 
@@ -34,8 +33,8 @@ A BibTeX entry for LaTeX users is:
 }
 ```
 
-Manuals and an extensive documentation are coming soon. If you have recommendations or face problem, please open an issue in this GitHub repository or contact the maintainers: 
+Manuals and an extensive documentation are coming soon. If you have recommendations or face a problem, please open an [issue](https://github.com/stefan-mueller/tada/issues) or contact the maintainers: 
 
-- [Michael Jankowski](http://michael-jankowski.de) (University of Oldenburg): michael.jankowski@uni-oldenburg.de
+- [Michael Jankowski](http://michael-jankowski.de), University of Oldenburg: michael.jankowski@uni-oldenburg.de
 
 - [Stefan Müller](http://muellerstefan.net), Trinity College Dublin: mullers@tcd.ie
