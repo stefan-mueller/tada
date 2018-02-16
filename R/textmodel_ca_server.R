@@ -11,7 +11,9 @@ observeEvent(input$estimate_ca, {
 
   if(dfm_container$dfm_check == FALSE){
     
-    shinyjs::alert("CA requires a dfm of a corpus. Please create a dfm first after having uploaded your corpus (see menu on the left).")
+    shinyalert::shinyalert("Error!",
+                           "CA requires a dfm of a corpus. Please create a dfm first after having uploaded your corpus (see menu on the left).",
+                           type = "error")
     ca_container$ca <- NULL
     ca_container$ca_check <- FALSE
   
@@ -28,7 +30,9 @@ observeEvent(input$estimate_ca, {
       
     } else{
       
-      shinyjs::alert(paste("An error occured when estimating CA The error message is:", ca[1]))
+      shinyalert::shinyalert("Error!",
+                             paste("An error occured when estimating CA The error message is:", ca[1]),
+                             type = "error")
       ca_container$ca <- NULL
       ca_container$ca_check <- FALSE    
       

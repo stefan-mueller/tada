@@ -12,7 +12,9 @@ observeEvent(input$estimate_wf, {
   
   if(dfm_container$dfm_check == FALSE){
     
-    shinyjs::alert("Wordfish requires a dfm of a corpus. Please create a dfm first after having uploaded your corpus (see menu on the left).")
+    shinyalert::shinyalert("Error!",
+                           "Wordfish requires a dfm of a corpus. Please create a dfm first after having uploaded your corpus (see menu on the left).",
+                           type = "error")
     wf_container$wf <- NULL
     wf_container$wf_check <- FALSE
     
@@ -31,7 +33,7 @@ observeEvent(input$estimate_wf, {
     
   } else{
     
-    shinyjs::alert(paste("An error occured when estimating Wordfish. The error message is:", wf[1]))
+    shinyalert::shinyalert("Error while estimating Wordfish.", paste("An error occured. The error message is:", wf[1]), type = "error")
     wf_container$wf <- NULL
     wf_container$wf_check <- FALSE    
   

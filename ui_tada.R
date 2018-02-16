@@ -9,7 +9,7 @@ ui <- function(req){
                     source("sidebar.R", local = TRUE)$value,
                     
                     # Body
-                    dashboardBody(useShinyjs(),
+                    dashboardBody(useShinyjs(), useShinyalert(),
                       tabItems(
                         tabItem(tabName = "data_upload", source("ui/data_upload.R", local = TRUE)$value),
                         tabItem(tabName = "subset_reshape_corpus", source("ui/subset_reshape_corpus.R", local = TRUE)$value),

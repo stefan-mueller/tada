@@ -48,15 +48,23 @@ observeEvent(input$reshape, {
   
   if(unit_corpus == "paragraphs"){ # if corpus is at document level
     
-    if(input$reshape_corpus == "sentences") shinyjs::alert("You cannot reshape to sentences from a corpus of paragraphs.")
-    if(input$reshape_corpus == "paragraphs") shinyjs::alert("Your data is already reshaped to paragraphs.")
+    if(input$reshape_corpus == "sentences") shinyalert::shinyalert("Error!",
+                                                                   "You cannot reshape to sentences from a corpus of paragraphs.",
+                                                                   type = "error")
+    if(input$reshape_corpus == "paragraphs") shinyalert::shinyalert("Note!",
+                                                                    "Your data is already reshaped to paragraphs.",
+                                                                    type = "info")
     
   }
   
   if(unit_corpus == "sentences"){ # if corpus is at document level
 
-    if(input$reshape_corpus == "paragraphs") shinyjs::alert("You cannot re-aggregate your data.")
-    if(input$reshape_corpus == "sentences") shinyjs::alert("Your data is already reshaped to sentences.")
+    if(input$reshape_corpus == "paragraphs") shinyalert::shinyalert("Warning!",
+                                                                    "You cannot re-aggregate your data.",
+                                                                    type = "warning")
+    if(input$reshape_corpus == "sentences") shinyalert::shinyalert("Note!",
+                                                                   "Your data is already reshaped to sentences.",
+                                                                   type = "info")
     
   }
   
@@ -95,7 +103,9 @@ get_display_text <- eventReactive(input$get_display_text, {
   export_text <- all_docs[text_id]
   
   if(is.na(export_text)){
-    shinyjs::alert("Text could not be found. Please enter a different document ID or number.")
+    shinyalert::shinyalert("Warning",
+                           "Text could not be found. Please enter a different document ID or number.",
+                           type = "warning")
     return(NULL)
   } else{
     return(export_text)

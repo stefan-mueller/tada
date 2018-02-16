@@ -11,7 +11,9 @@ observeEvent(input$subset_corpus, {
   if(input$subset_condition != ""){
     corp <- try(corpus_subset(corp, eval(parse(text = input$subset_condition))))
     if(class(corp)[1] == "try-error"){
-      shinyjs::alert("Subset condition is not valid! Corpus has not been subsetted.")
+      shinyalert::shinyalert("Error!",
+                             "Subset condition is not valid! Corpus has not been subsetted.",
+                             type = "error")
       corp <- corpus_container$corp
     }
   }
@@ -28,7 +30,9 @@ observeEvent(input$subset_corpus, {
   n_docs <- ndoc(corp)
   
   if(n_docs == 0){
-    shinyjs::alert("Corpus does not contain any documents due to subsetting! Ignoring subsetting and returning original corpus.")
+    shinyalert::shinyalert("Warning!",
+                           "Corpus does not contain any documents due to subsetting! Ignoring subsetting and returning original corpus.",
+                           type = "warning")
     corp <- corpus_container$corp
   }
   

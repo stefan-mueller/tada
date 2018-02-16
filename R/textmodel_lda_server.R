@@ -11,7 +11,9 @@ lda_container <- reactiveValues(lda = NULL,
 observeEvent(input$estimate_lda, {
   
   if(dfm_container$dfm_check == FALSE){
-    shinyjs::alert("LDA requires a dfm of a corpus. Please create a dfm first after having uploaded your corpus (see menu on the left).")
+    shinyalert::shinyalert("Error!",
+                           "LDA requires a dfm of a corpus. Please create a dfm first after having uploaded your corpus (see menu on the left).",
+                           type = "error")
     lda_container$lda <- NULL
     lda_container$lda_check <- FALSE
   } else {

@@ -11,14 +11,18 @@ observeEvent(input$get_keyness, {
   
   if(dfm_container$dfm_check == FALSE){
     
-    shinyjs::alert("Keyness requires a dfm of a corpus. Please create a dfm first after having uploaded your corpus (see menu on the left).")
+    shinyalert::shinyalert("Error!",
+                           "Keyness requires a dfm of a corpus. Please create a dfm first after having uploaded your corpus (see menu on the left).",
+                           type = "error")
 
     keyness_container$keyness <- NULL
     keyness_container$keyness_check <- FALSE
     
   } else if(!(input$keyness_variable %in% colnames(docvars(corpus_container$corp)))){
     
-    shinyjs::alert("Keyness variable does not exist in your data.")
+    shinyalert::shinyalert("Error!",
+                           "Keyness variable does not exist in your data.",
+                           type = "error")
     
     keyness_container$keyness <- NULL
     keyness_container$keyness_check <- FALSE
@@ -26,7 +30,9 @@ observeEvent(input$get_keyness, {
     
   } else if(!(input$keyness_target %in% unique(docvars(corpus_container$corp, input$keyness_variable)))){
     
-    shinyjs::alert("Keyness target does not exist in your keyness variable.")
+    shinyalert::shinyalert("Error!",
+                           "Keyness target does not exist in your keyness variable.",
+                           type = "error")
     
     keyness_container$keyness <- NULL
     keyness_container$keyness_check <- FALSE

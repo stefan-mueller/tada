@@ -31,11 +31,13 @@ box(width = 12, title = "Select Data", collapsible = TRUE,
 
     column(width = 4,
     h4("Set Text and Document Variables"),
-    textInput("text_var", label = "Name of Text Variable", placeholder = "e.g. 'text'"),
-    textInput("doc_var", label = "Name of Document ID Variable", placeholder = "e.g. 'document'"),
-    actionButton("set_vars", "Set Text and Doc Variables!", width = "100%",
-                 style="color: #fff; background-color: #2A3135; border-color: #B9C6CE")
-)),
+    uiOutput("set_vars_ui")
+    #textInput("text_var", label = "Name of Text Variable", placeholder = "e.g. 'text'"),
+    #textInput("doc_var", label = "Name of Document ID Variable", placeholder = "e.g. 'document'"),
+    #actionButton("set_vars", "Set Text and Doc Variables!", width = "100%",
+    #             style="color: #fff; background-color: #2A3135; border-color: #B9C6CE")
+)
+),
 
 uiOutput("warning_upload"),
 

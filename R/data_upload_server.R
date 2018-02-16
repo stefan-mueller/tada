@@ -68,10 +68,14 @@ observeEvent(input$upload_file, {
         df_container$info_text <- "Data format is not supported!"
         df_container$info_color <- "red"
         df_container$info_item <- "warning"
-        shinyjs::alert("Wrong data format! Please upload a new file.")
+        shinyalert::shinyalert("Error!",
+                               "Wrong data format. Please upload a new file in a different format.", 
+                               type = "error")
       }
     } else{ # ==> No file selected
-      shinyjs::alert("Please select a file.")
+      shinyalert::shinyalert("Info!",
+                             "Please select a file.",
+                             type="info")
       df_container$df <- NULL
       df_container$upload_check <- FALSE
       df_container$format_check <- FALSE
@@ -107,7 +111,9 @@ observeEvent(input$upload_file, {
     
       if(sum(char_vars) == 0){
         
-        shinyjs::alert("Attention: No column of your data contains text.")
+        shinyalert::shinyalert("Warning!",
+                               "No column of your data contains text.", 
+                               type = "warning")
       
       } else{ # ==> DATA CONTAINS TEXT
         
@@ -153,25 +159,66 @@ observeEvent(input$use_default == TRUE | input$use_default == FALSE, {
 
 ###################### Text and Doc Var Variables
 
+observe({
+  if(df_container$format_check) {
+    
+    char_var <- sapply(df_container$df, is.character)
+    char_var <- names(df_container$df)[char_var]
+    
+    choices = data.frame(
+      var = char_var,
+      num = 1:length(char_var),
+      stringsAsFactors = FALSE
+    )
+    
+  } else {
+    
+    char_var <- sapply(df_container$df, is.character)
+    char_var <- names(df_container$df)[char_var]
+    
+    choices = data.frame(
+      var = c("", ""),
+      num = 1:2,
+      stringsAsFactors = FALSE
+    )
+  }
+  
+  output$set_vars_ui <- renderUI({
+    tagList(
+    selectInput("text_var", "Name of Text Variable", as.list(choices$var), selected = as.list(choices$var)[[1]]),
+    selectInput("doc_var", "Name of Document ID Variable", as.list(choices$var), selected = as.list(choices$var)[[2]]),
+    actionButton("set_vars", "Set Text and Doc Variables!", width = "100%",
+                 style="color: #fff; background-color: #2A3135; border-color: #B9C6CE")
+    )
+  })
+  
+})
+
 observeEvent(input$set_vars, {
 
   if(input$use_default == TRUE){  
     
-    shinyjs::alert("You are using the default corpus. Text variable and document ID cannot be changed.")
+    shinyalert::shinyalert("Info!",
+                           "You are using the default corpus. Text variable and document ID cannot be changed.",
+                           type = "info")
   
   } else{ 
   
     if(!df_container$format_check){
     
-      shinyjs::alert("Please first upload a data set.")
+      shinyalert::shinyalert("Error!",
+                             "Please upload a data set.",
+                             type = "error")
   
     } else{
     
       if(input$text_var == ""){
-        shinyjs::alert("Please enter the name of the text variable.")
+        shinyalert::shinyalert("Error!",
+                               "Please enter the name of the text variable.",
+                               type = "error")
       } else{
-        if(!(input$text_var %in% colnames(df_container$df))) shinyjs::alert("Your text variable does not exist in the data.") else df_container$text_var <- input$text_var
-        if(!(input$doc_var %in% colnames(df_container$df))) shinyjs::alert("Your document ID variable does not exist in the data.") else df_container$doc_var <- input$doc_var
+        if(!(input$text_var %in% colnames(df_container$df))) shinyalert::shinyalert("Error", "Your text variable does not exist in the data.", type = "error") else df_container$text_var <- input$text_var
+        if(!(input$doc_var %in% colnames(df_container$df))) shinyalert::shinyalert("Error", "Your document ID variable does not exist in the data.", type = "error") else df_container$doc_var <- input$doc_var
       }
     }
   }

@@ -16,14 +16,18 @@ observeEvent(input$create_dfm, {
   
   if(!is.na(input$dfm_max_docfreq)){
     if(!(input$dfm_min_docfreq <= input$dfm_max_docfreq)){
-      shinyjs::alert("Min doc freq must be <= max doc freq!")
+      shinyalert::shinyalert("Error!",
+                             "Min doc freq must be <= max doc freq!",
+                             type = "error")
       return(NULL)
     }
   }
   
   if(!is.na(input$dfm_max_count)){
     if(!(input$dfm_min_count <= input$dfm_max_count)){
-      shinyjs::alert("Min doc count must be <= max doc count!")
+      shinyalert::shinyalert("Error!",
+                             "Min doc count must be <= max doc count!",
+                             type = "error")
       return(NULL)
     }
   }
@@ -72,7 +76,7 @@ observeEvent(input$create_dfm, {
     
     } else{
     
-      shinyjs::alert("dfm is empty. You probably have removed to many words.")
+      shinyalert::shinyalert("Warning!","Your dfm is empty. You probably have removed too many words.", type = "warning")
       dfm_container$dfm_check <- FALSE
       dfm_container$dfm <- NULL
       dfm_container$dfm_nterms <- NULL
@@ -83,7 +87,7 @@ observeEvent(input$create_dfm, {
     
     } else{
       
-      shinyjs::alert("No corpus exists. Have you uploaded a valid data set?")
+      shinyalert::shinyalert("Error!","No corpus exists. Have you uploaded a valid data set?", type = "error")
       dfm_container$dfm_check <- FALSE
       dfm_container$dfm <- NULL
       dfm_container$dfm_nterms <- NULL

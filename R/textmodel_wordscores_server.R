@@ -14,7 +14,9 @@ observeEvent(input$estimate_ws, {
   
   if(dfm_container$dfm_check == FALSE){ 
     
-    shinyjs::alert("Wordscores requires a dfm of a corpus. Please create a dfm first after having uploaded your corpus (see menu on the left).")
+    shinyalert::shinyalert("Error!",
+                           "Wordscores requires a dfm of a corpus. Please create a dfm first after having uploaded your corpus (see menu on the left).",
+                           type = "error")
     ws_container$ws_score_check <- FALSE
     ws_container$ws <- NULL
     ws_container$ws_check <- FALSE  
@@ -28,7 +30,9 @@ observeEvent(input$estimate_ws, {
     
     } else{
       
-      shinyjs::alert("Scoring variable does not exist in your data! Please enter a valid scoring variable.")
+      shinyalert::shinyalert("Error!",
+                             "Scoring variable does not exist in your data! Please enter a valid scoring variable.",
+                             type = "error")
       ws_container$ws_score_check <- FALSE
       ws_container$ws <- NULL
       ws_container$ws_check <- FALSE  
@@ -53,7 +57,9 @@ observeEvent(input$estimate_ws, {
         
       } else{
         
-        shinyjs::alert(paste("An error occured when estimating Wordscores The error message is:", ws[1]))
+        shinyalert::shinyalert("Error!",
+                               paste("An error occured when estimating Wordscores The error message is:", ws[1]),
+                               type = "error")
         ws_container$ws <- NULL
         ws_container$ws_check <- FALSE  
         ws_container$ws_pred <- NULL

@@ -16,6 +16,7 @@ if(!require(pacman)) install.packages("pacman")
 #library(ggridges)
 
 pacman::p_load(shiny, 
+               shinyalert,
                shinydashboard,
                shinyjs,
                quanteda,
